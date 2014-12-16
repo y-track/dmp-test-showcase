@@ -529,9 +529,9 @@
 
 	</div>
 
-    <script src="https://cdn.rawgit.com/y-track/live-api-js/16051cc3c125b43893b794d6fcf791f2b3550b63/api.js"></script>
+    <script src="//prod-js.aws.y-track.com/v5/tracker.min.js"></script>
     <script>
-        var ytAccountId = 'YT-000002-1'; //YT-000002-1 has to be replaced by your account id
+        var ytAccountId = 'YT-000022-1'; //YT-000002-1 has to be replaced by your account id
         var api = new YtApi(ytAccountId);
         api.findCurrentVisitor(
             'segments,last_visit_duration', 
@@ -548,7 +548,7 @@
     </script>    
     <script src="//prod-js.aws.y-track.com/v5/debugbar.js"></script>
     <script>
-        var ytAccountId = 'YT-000002-1'; //YT-000002-1 has to be replaced by your account id
+        var ytAccountId = 'YT-000022-1'; //YT-000002-1 has to be replaced by your account id
         var api = new YtApi(ytAccountId);
         var debugBar = new YtDebugBar(api);
         cbSuccess = function(data) {
