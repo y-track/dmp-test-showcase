@@ -1,12 +1,12 @@
 window.ytrackAsyncInit = function() {
     var _wt1Q = this._wt1Q || [];
-    var _y_account = "<Replacer par le bon code>";
+    var _y_account = "000022";
 
     window.Ytrack.init({
         "account" : _y_account,
-        "domain_id" : "0006",
+        "domain_id" : "0100",
         "domain_version" : "2",
-        "domain" : "<Remplacer par le bon domain>",
+        "domain" : "www.ddf-t1.com",
         "parts" : {"8a1b58c": false}
     });
 
@@ -25,6 +25,7 @@ window.ytrackAsyncInit = function() {
 };
 
 (function() {
+    var _y_account = "000022";
     var e = document.createElement("script");
     e.async = true;
     e.src = "//cdn.dmp.y-track.com/" + _y_account + "/v5/tracker.min.js";
