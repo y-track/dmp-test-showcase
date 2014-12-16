@@ -528,6 +528,42 @@
 
 
 	</div>
+
+    <script src="https://cdn.rawgit.com/y-track/live-api-js/16051cc3c125b43893b794d6fcf791f2b3550b63/api.js"></script>
+    <script>
+        var ytAccountId = 'YT-000002-1'; //YT-000002-1 has to be replaced by your account id
+        var api = new YtApi(ytAccountId);
+        api.findCurrentVisitor(
+            'segments,last_visit_duration', 
+            function(data){
+                if(-1 != data.segments.indexOf('popup_newsletter')) {
+                    alert('Hey dude ! Would you like to receive exclusive coupons on your email ?');
+                }
+            }, 
+            function(e) {
+                console.log(e);
+                alert('an error occured');
+            }
+        );
+    </script>    
+    <script src="//prod-js.aws.y-track.com/v5/debugbar.js"></script>
+    <script>
+        var ytAccountId = 'YT-000002-1'; //YT-000002-1 has to be replaced by your account id
+        var api = new YtApi(ytAccountId);
+        var debugBar = new YtDebugBar(api);
+        cbSuccess = function(data) {
+            if(data.segments) {
+                    for(var segmentIndex in data.segments) {
+                            if(0==data.segments[segmentIndex].toLowerCase().indexOf('popup_')) {
+                                    $('#myModal').modal();
+                            }
+                    }
+            }
+        };
+
+        debugBar.init(cbSuccess);
+
+    </script>
     <script >
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
