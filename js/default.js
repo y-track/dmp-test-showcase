@@ -215,8 +215,8 @@ $('document').ready(function() {
 	$("a.big-button,a.medium-button").mouseenter(function() {
 		if($(this).hasClass('color') || $(this).parent('a').hasClass('color') )
 			return;
-		$(this).stop().animate({backgroundColor: toColor},200);
-		$(this).children('span').stop().animate({backgroundColor: toColor},200);
+		//$(this).stop().animate({backgroundColor: toColor},200);
+		//$(this).children('span').stop().animate({backgroundColor: toColor},200);
 	}).mouseleave(function() {
 		if($(this).hasClass('color') || $(this).parent('a').hasClass('color') )
 			return;
