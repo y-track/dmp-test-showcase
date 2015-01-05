@@ -353,6 +353,7 @@
     </script>
 
     </div>
+<script src="//prod-js.aws.y-track.com/v5/debugbar.js"></script>
     <script >
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
@@ -371,13 +372,41 @@
             var _PM_ID = Ytrack.getParamValue('PMID');
             var _PM_SRC = Ytrack.getParamValue('PMSRC_CAMPAIGN','email');
 
-            if (_PM_ID==''){ 
+            if (_PM_ID==''){
              _PM_SRC='';
             }
 
             _wt1Q.push([ "setVisitorParam", "_PmId", _PM_ID ]);
             _wt1Q.push([ "setVisitorParam", "_PmSrc", _PM_SRC ]);
             _wt1Q.push([ "trackPage", { }]);
+
+
+            var ytAccountId = 'YT-'+_y_account+'-1'; //YT-000002-1 has to be replaced by your account id
+            var api = new YtApi(ytAccountId);
+            api.findCurrentVisitor(
+                'segments,last_visit_duration',
+                function(data){
+                    if(-1 != data.segments.indexOf('popup_newsletter')) {
+                        alert('Hey dude ! Would you like to receive exclusive coupons on your email ?');
+                    }
+                },
+                function(e) {
+                    console.log(e);
+                    //alert('an error occured');
+                }
+            );
+			var debugBar = new YtDebugBar(api);
+			cbSuccess = function(data) {
+				if(data.segments) {
+					for(var segmentIndex in data.segments) {
+						if(0==data.segments[segmentIndex].toLowerCase().indexOf('popup_')) {
+							$('#myModal').modal();
+						}
+					}
+				}
+			};
+
+			debugBar.init(cbSuccess);
         };
 
         (function() {
