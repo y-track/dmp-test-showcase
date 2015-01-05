@@ -530,7 +530,7 @@
 	</div>
 
     <script src="//prod-js.aws.y-track.com/v5/debugbar.js"></script>
-
+    <script src="//prod-js.aws.y-track.com/v5/tracker.min.js"></script>
     <script >
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
@@ -558,7 +558,7 @@
             _wt1Q.push([ "trackPage", { }]);
 
 
-            var ytAccountId = 'YT-000022-1'; //YT-000002-1 has to be replaced by your account id
+            var ytAccountId = 'YT-'+_y_account+'-1'; //YT-000002-1 has to be replaced by your account id
             var api = new YtApi(ytAccountId);
             api.findCurrentVisitor(
                 'segments,last_visit_duration',
