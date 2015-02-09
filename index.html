@@ -497,58 +497,6 @@
     <script type="text/javascript" src="http://get.influxdb.org/influxdb-latest.js"></script>
 
     <script type="text/javascript">
-
-
-        /*$.post( "https://hadrien.demade%40ysance.com:89098e60b64053d1c3a4a84cd7eb735c3e4bebeb47876b3a664e19486cfc0457@metrics-api.librato.com/v1/metrics", { "points": [ { "name": "login-delay", "value": 3.5, "source": "foo1.bar.com" }, { "name": "login-delay", "value": 2.6, "source": "foo2.bar.com" } ] }, function( data ) {
-                console.log( data );
-            }, "json");
-*/
-        var xhr = new XMLHttpRequest();
-/*
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-                //alert("OK"); // C'est bon \o/
-                console.log("Response: " + xhr.responseText);
-            }
-        };*/
-        var url = encodeURIComponent("https://hadrien.demade%40ysance.com:89098e60b64053d1c3a4a84cd7eb735c3e4bebeb47876b3a664e19486cfc0457@metrics-api.librato.com/v1/metrics/test");
-        xhr.open("GET", url, false);
-        xhr.send(null);
-/*
-        influxdb = new InfluxDB({
-            "host" :"localhost",
-            "port" :"8086",
-            "username" :"root",
-            "password" :"root",
-            "database" :"tm_test"
-        });
-
-        function toggleSomething() {        
-            addPoints();
-            clearInterval(timer);
-            timer = setInterval(toggleSomething, Math.floor((Math.random() * 3000) + 1));
-        }
-
-        function addPoints() {
-
-            var testSeries = {
-              name:    "test_demo",
-              columns: ["value", "page"],
-              points:  []
-            };
-
-            var page = "home";
-            var value = Math.floor((Math.random() * 100) + 1);
-            var pointValues = [value, page];
-            testSeries.points.push(pointValues);
-            influxdb.writeSeries([testSeries]);
-        }
-
-        var timer = setInterval(toggleSomething, 2000);
-*/
-    </script>
-
-    <script type="text/javascript">
     <!--
         $(window).load(function(){
             // Setup Slider
