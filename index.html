@@ -504,15 +504,15 @@
             }, "json");
 */
         var xhr = new XMLHttpRequest();
-
+/*
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
                 //alert("OK"); // C'est bon \o/
                 console.log("Response: " + xhr.responseText);
             }
-        };
+        };*/
         var url = "https://hadrien.demade%40ysance.com:89098e60b64053d1c3a4a84cd7eb735c3e4bebeb47876b3a664e19486cfc0457@metrics-api.librato.com/v1/metrics/test";
-        xhr.open("GET", url, true);
+        xhr.open("GET", url, false);
         xhr.send(null);
 /*
         influxdb = new InfluxDB({
