@@ -540,22 +540,24 @@
                 "domain_id" : "0100",
                 "domain_version" : "2",
                 "domain" : "ddf-t1.com",
-                "parts" : {"8a1b58c": false}
+                "parts" : {"8a1b58c": true}
             });
 
             _wt1Q.setTrackAccept(true);
 
+            Ytrack.addPMCheck([ '^_[a-z]{2}_[0-9]+$', '^[a-z0-9]{32}$']);
+
             var _PM_ID = Ytrack.getParamValue('PMID');
             var _PM_SRC = Ytrack.getParamValue('PMSRC_CAMPAIGN','email');
 
-            if (_PM_ID==''){
-             _PM_SRC='';
+            if (Ytrack.isValidPM(_PM_ID)) {
+                // Push the value to the tracker
+                _wt1Q.push(["setVisitorParam", "_PmId", _PM_ID]);
+                // Push type and origin to tracker
+                _wt1Q.push(["setVisitorParam", "_PmSrc", _PM_SRC]);
             }
 
-            _wt1Q.push([ "setVisitorParam", "_PmId", _PM_ID ]);
-            _wt1Q.push([ "setVisitorParam", "_PmSrc", _PM_SRC ]);
             _wt1Q.push([ "trackPage", { }]);
-
 
             var ytAccountId = 'YT-'+_y_account+'-1'; //YT-000002-1 has to be replaced by your account id
             var api = new YtApi(ytAccountId);
@@ -583,6 +585,10 @@
 			};
 
 			debugBar.init(cbSuccess);
+
+            $('.subtitle').on('mouseover', function() {
+                _wt1Q.push([ "trackEvent", { 'mouseover': 'subtitle' }]);
+            });
         };
 
         (function() {
