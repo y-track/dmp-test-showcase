@@ -529,7 +529,7 @@
 
 	</div>
 
-    <script src="//dev-cdn.dmp.y-track.com/v5/debugbar.js"></script>
+    <script src="//dev-cdn.dmp.y-track.com/v5/debugbar.min.js"></script>
     <script >
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
@@ -560,6 +560,7 @@
             _wt1Q.push(["setSessionParam", "_page_type", "home"]);
             _wt1Q.push([ "trackPage", { }]);
 
+            /*
             var ytAccountId = 'YT-'+_y_account+'-1'; //YT-000002-1 has to be replaced by your account id
             var api = new YtApi(ytAccountId);
             api.findCurrentVisitor(
@@ -586,7 +587,7 @@
 			};
 
 			debugBar.init(cbSuccess);
-
+            */
             $('.subtitle').on('mouseover', function() {
                 _wt1Q.push([ "trackEvent", { 'mouseover': 'subtitle' }]);
             });
