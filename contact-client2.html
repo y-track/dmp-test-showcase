@@ -324,9 +324,9 @@
     </div>
 <script src="//dev-cdn.dmp.y-track.com/v5/debugbar.js"></script>
     <script >
+        var  _y_account = "YT-000022-1";
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
-            var _y_account = "000022";
 
             window.Ytrack.init({
                 "account" : _y_account,
@@ -379,10 +379,9 @@
         };
 
         (function() {
-            var _y_account = "000022";
             var e = document.createElement("script");
             e.async = true;
-            e.src = "//dev-cdn.dmp.y-track.com/yt-" + _y_account + "-1/v5/tracker.min.js";
+            e.src = "//dev-cdn.dmp.y-track.com/" + _y_account + "/v5/tracker.min.js";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(e, s);
         }());
