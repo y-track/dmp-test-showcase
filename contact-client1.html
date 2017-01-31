@@ -340,6 +340,7 @@
 
             var _PM_ID = Ytrack.getParamValue('PMID');
             var _PM_SRC = Ytrack.getParamValue('PMSRC_CAMPAIGN','email');
+	    var _TOKEN_ID = Ytrack.getParamValue('tokenId');
 
             if (_PM_ID==''){
              _PM_SRC='';
@@ -347,6 +348,7 @@
 
             _wt1Q.push([ "setVisitorParam", "_PmId", _PM_ID ]);
             _wt1Q.push([ "setVisitorParam", "_PmSrc", _PM_SRC ]);
+	    _wt1Q.push([ "setVisitorParam", "_TokenId", _TOKEN_ID ]);	
             _wt1Q.push([ "trackPage", { }]);
 
 
