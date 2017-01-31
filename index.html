@@ -549,6 +549,8 @@
 
             var _PM_ID = Ytrack.getParamValue('PMID');
             var _PM_SRC = Ytrack.getParamValue('PMSRC_CAMPAIGN','email');
+	
+   	    var _TOKEN_ID = Ytrack.getParamValue('tokenId');
 
             if (Ytrack.isValidPM(_PM_ID)) {
                 // Push the value to the tracker
@@ -558,6 +560,7 @@
             }
 
             _wt1Q.push(["setCustomData", 10, "my-custom-data-10"]);
+	    _wt1Q.push(["setCustomData", "_TokenId", _TOKEN_ID ]);	
             _wt1Q.push(["setSessionParam", "_page_type", "home"]);
             _wt1Q.push([ "trackPage", { }]);
 
