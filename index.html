@@ -535,6 +535,8 @@
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
 
+		$($(".nav")[0]).html("<div style=\"color:red\">" +"Etape 1" + "</div>");
+		
             window.Ytrack.init({
                 "account" : _y_account,
                 "domain_id" : "0100",
@@ -543,9 +545,13 @@
                 "parts" : {"8a1b58c": true}
             });
 
+		$($(".nav")[0]).html("<div style=\"color:red\">" +"Etape 2" + "</div>");
+		
             _wt1Q.setTrackAccept(true);
 
             Ytrack.addPMCheck([ '^_[a-z]{2}_[0-9]+$', '^[a-z0-9]{32}$']);
+		
+		$($(".nav")[0]).html("<div style=\"color:red\">" +"Etape 3" + "</div>");
 
             var _PM_ID = Ytrack.getParamValue('PMID');
             var _PM_SRC = Ytrack.getParamValue('PMSRC_CAMPAIGN','email');
