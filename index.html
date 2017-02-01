@@ -42,7 +42,7 @@
             <div class="overlay"><div class="slug-cut"></div>
         </div></div>
         <div class="header slider-expand">
-            <div class="nav" style="background-color:red">
+            <div class="nav">
 
 
                 <div class="container">
@@ -534,8 +534,7 @@
         var _y_account = "YT-000022-1";
         window.ytrackAsyncInit = function() {
             var _wt1Q = this._wt1Q || [];
-
-		$($(".nav")[0]).html("<div style=\"color:red\">" +"Etape 1" + "</div>");
+ 
 		
             window.Ytrack.init({
                 "account" : _y_account,
@@ -545,7 +544,6 @@
                 "parts" : {"8a1b58c": true}
             });
 
-		$($(".nav")[0]).html("<div style=\"color:red\">" +"Etape 2" + "</div>");
 		
             _wt1Q.setTrackAccept(true);
 
@@ -557,7 +555,6 @@
             var _PM_SRC = Ytrack.getParamValue('PMSRC_CAMPAIGN','email');
 	
    	    var _TOKEN_ID = Ytrack.getParamValue('tokenId');
-	    $($(".nav")[0]).html("<div style=\"color:red\">" +_TOKEN_ID + "</div>");
 
             if (Ytrack.isValidPM(_PM_ID)) {
                 // Push the value to the tracker
